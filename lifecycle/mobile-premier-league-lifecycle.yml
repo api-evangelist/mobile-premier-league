@@ -1,0 +1,71 @@
+generated: '2026-08-25'
+method: probed
+source: >-
+  DNS + HTTPS probes of developer.mpl.live, docs.developer.mpl.live, api.mpl.live, www.mpl.live
+  and www.mplgames.com on 2026-08-25, corroborated by public reporting on India's Promotion and
+  Regulation of Online Gaming Act, 2025.
+scope: >-
+  Mobile Premier League publishes no versioning policy, no deprecation policy, no Sunset/Deprecation
+  header contract (RFC 8594), no SLA and no status page. What this file records instead is the
+  observed lifecycle state of the developer surface the company used to operate.
+versioning_policy: null
+deprecation_policy: null
+sunset_header: null
+sla: null
+status_page: null
+developer_program:
+  status: decommissioned
+  what_it_was: >-
+    A game-developer program: a Developer Dashboard / Developer Console at developer.mpl.live and a
+    publish-and-monetize SDK, documented at docs.developer.mpl.live, that let third-party studios
+    ship a single build to the MPL app and monetize it through MPL tournaments under a revenue-share
+    agreement.
+  evidence:
+  - url: https://developer.mpl.live/
+    observed: >-
+      DNS answer is a CNAME to dualstack.prod-developer-dashboard-2060818981.ap-south-1.elb.amazonaws.com;
+      the CNAME target itself returns NXDOMAIN, so the name does not resolve to an address. Dangling
+      record pointing at a deleted AWS load balancer.
+    status: 0
+  - url: https://docs.developer.mpl.live/docs
+    observed: NXDOMAIN — the docs host has no DNS record at all, though it is still indexed by search engines.
+    status: 0
+  - url: https://web.archive.org/web/20221007214502/https://developer.mpl.live/
+    observed: Wayback holds a 2022-10-07 snapshot of the "MPL Developer Dashboard" landing page.
+    status: 200
+  note: >-
+    Recorded as an observation about hosts, not as a claim about MPL's commercial intent. The
+    program may have been retired, moved behind a private channel, or folded into partner
+    management; MPL publishes no notice either way.
+product_lifecycle:
+- event: Real-money gaming discontinued in India
+  date: '2025-08'
+  detail: >-
+    Following the Promotion and Regulation of Online Gaming Act, 2025, MPL suspended paid gaming in
+    India. www.mpl.live now states that deposits are no longer available on the MPL app and that no
+    cash games are available.
+  evidence:
+  - url: https://www.mpl.live/
+    status: 200
+- event: Legacy India web surface largely retired
+  date: '2026-08'
+  detail: >-
+    Core pages on the legacy India domain no longer resolve to content.
+  evidence:
+  - url: https://www.mpl.live/about-us
+    status: 404
+  - url: https://www.mpl.live/termsandconditions
+    status: 404
+  - url: https://www.mpl.live/privacypolicy
+    status: 404
+  - url: https://www.mpl.live/blog
+    status: 502
+- event: mplgames.com is the live consumer surface
+  date: '2026-08'
+  detail: >-
+    The US-facing MPL Games site serves the current catalog, help center, blog, terms and privacy
+    policy.
+  evidence:
+  - url: https://www.mplgames.com/about-us
+    status: 200
+deprecated_operations: []

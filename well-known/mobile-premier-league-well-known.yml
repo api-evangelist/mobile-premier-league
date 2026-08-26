@@ -1,0 +1,63 @@
+generated: '2026-08-25'
+method: probed
+source: direct HTTPS probes of every Mobile Premier League host, 2026-08-25
+hit_count: 0
+note: >-
+  Every /.well-known/ path probed on every Mobile Premier League host returned 404. api.mpl.live
+  answers with a real JSON error envelope ({"code":404,"message":"HTTP 404 Not Found"}, 43 bytes)
+  and the two Next.js sites answer with their own 404 pages under a 404 status code, so these are
+  genuine negatives rather than a single-page-app catch-all. No WellKnown or SecurityTxt pointer is
+  emitted, because nothing was served.
+hosts:
+- host: https://api.mpl.live
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://www.mplgames.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://www.mpl.live
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+soft_404_control:
+  api.mpl.live: 'HTTP 404, application/json, 43 bytes — real error envelope'
+  www.mplgames.com: 'HTTP 404, text/html, ~13.2 KB Next.js not-found page'
+  www.mpl.live: 'HTTP 404, text/html, ~6.4 KB Next.js not-found page'
