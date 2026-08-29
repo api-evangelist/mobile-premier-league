@@ -12,6 +12,17 @@ description: >-
   REST, GraphQL, MCP or event API today. Following India's Promotion and Regulation of Online
   Gaming Act, 2025, MPL discontinued real-money gaming in India; www.mplgames.com is the live
   consumer surface, principally serving the United States.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://cms-origin.mpl.live/cms-latest-env/images/MPL_logo_13457e45ff_c5f37df2e8.webp
 url: https://raw.githubusercontent.com/api-evangelist/mobile-premier-league/refs/heads/main/apis.yml
 x-type: company
